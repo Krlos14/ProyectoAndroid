@@ -1,0 +1,21 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">AniTalks</string>
+    <string name="app_theme">App temática: Anime &amp; Charlas</string>
+    <string name="app_desc">AniTalks es una aplicación de ejemplo que muestra una pantalla “Sobre la Aplicación” con opciones de contacto por email.</string>
+    <string name="app_version">Versión 1.0.0</string>
+
+    <!-- CTA / Accesibilidad -->
+    <string name="cta_contacto_info">Contacto / Info</string>
+    <string name="cd_enviar_email">Enviar correo</string>
+
+    <!-- Email -->
+    <string name="email_to">soporte@tudominio.com</string>
+    <string name="email_subject">Información sobre la Aplicación</string>
+    <!-- Puedes usar \n si prefieres. -->
+    <string name="email_body">Hola,\n\nMe gustaría recibir más información sobre la aplicación.\n\nGracias.</string>
+
+    <!-- UX: Chooser / Fallback -->
+    <string name="chooser_title">Enviar correo con…</string>
+    <string name="no_email_apps">No se encontró una app de correo instalada.</string>
+</resources>
