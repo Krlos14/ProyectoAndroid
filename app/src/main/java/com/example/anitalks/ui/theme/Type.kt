@@ -2,33 +2,57 @@ package com.example.anitalks.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.example.anitalks.R
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+// Fuente principal y de cuerpo: Roboto (legibilidad y consistencia)
+val RobotoFamily = FontFamily(
+    Font(R.font.roboto, FontWeight.Normal),
+    Font(R.font.roboto, FontWeight.Medium),
+    Font(R.font.roboto_2, FontWeight.Bold)
+)
+
+// Fuente de acento: Oswald
+val OswaldFamily = FontFamily(
+    Font(R.font.oswald, FontWeight.Bold)
+)
+
+
+
+val AnimeTalksTypography = Typography(
+
+    headlineLarge = TextStyle(
+        fontFamily = OswaldFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = Typography().headlineLarge.fontSize
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
+    headlineMedium = TextStyle(
+        fontFamily = OswaldFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = Typography().headlineMedium.fontSize
+    ),
+    titleLarge = TextStyle(
+        fontFamily = OswaldFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = Typography().titleLarge.fontSize
+    ),
+
+
+    bodyLarge = TextStyle(
+        fontFamily = RobotoFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = Typography().bodyLarge.fontSize
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = RobotoFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = Typography().bodyMedium.fontSize
+    ),
+    labelMedium = TextStyle(
+        fontFamily = RobotoFamily,
         fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+        fontSize = Typography().labelMedium.fontSize
     )
-    */
 )

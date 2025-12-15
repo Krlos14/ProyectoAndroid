@@ -1,21 +1,23 @@
 <resources>
-    <!-- App -->
-    <string name="app_name">AniTalks</string>
-    <string name="app_theme">App temática: Anime &amp; Charlas</string>
-    <string name="app_desc">AniTalks es una aplicación de ejemplo que muestra una pantalla “Sobre la Aplicación” con opciones de contacto por email.</string>
+    <string name="app_name">AnimeTalks</string>
+    <string name="app_theme">Red Social para Fans del Anime</string>
+    <string name="app_desc">AnimeTalks es la red social donde puedes chatear sobre tus series favoritas, puntuarlas y seguir a otros aficionados a la animación japonesa.</string>
     <string name="app_version">Versión 1.0.0</string>
+    <string name="cta_contacto_info">Contactar al Desarrollador</string>
 
-    <!-- CTA / Accesibilidad -->
-    <string name="cta_contacto_info">Contacto / Info</string>
-    <string name="cd_enviar_email">Enviar correo</string>
+    <string name="title_anime_list">Lista de Animes</string>
 
-    <!-- Email -->
-    <string name="email_to">soporte@tudominio.com</string>
-    <string name="email_subject">Información sobre la Aplicación</string>
-    <!-- Puedes usar \n si prefieres. -->
-    <string name="email_body">Hola,\n\nMe gustaría recibir más información sobre la aplicación.\n\nGracias.</string>
+    <string name="cd_volver">Volver a la pantalla anterior</string>
+    <string name="cd_favorito">Toggle favorito</string>
+    <string name="cd_enviar_email">Enviar Correo Electrónico</string>
 
-    <!-- UX: Chooser / Fallback -->
-    <string name="chooser_title">Enviar correo con…</string>
-    <string name="no_email_apps">No se encontró una app de correo instalada.</string>
+    <string name="email_to">soporte@anitalks.com</string>
+    <string name="email_subject">Consulta sobre AnimeTalks</string>
+    <string name="email_body">Hola, escribo para...</string>
+    <string name="chooser_title">Enviar correo usando...</string>
+    <string name="no_email_apps">No se encontraron aplicaciones de correo.</string>
+    <string name="nav_home">Animes</string>
+    <string name="nav_favorites">Favoritos</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_info">Acerca</string>
 </resources>
