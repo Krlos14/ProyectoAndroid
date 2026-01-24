@@ -5,19 +5,39 @@
     <string name="app_version">Versión 1.0.0</string>
     <string name="cta_contacto_info">Contactar al Desarrollador</string>
 
+    <string name="nav_home">Animes</string>
+    <string name="nav_favorites">Favoritos</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="nav_info">Acerca</string>
+
     <string name="title_anime_list">Lista de Animes</string>
+    <string name="search_placeholder">Buscar anime...</string>
+
+    <string name="dialog_delete_title">Quitar Favorito</string>
+    <string name="dialog_delete_msg">¿Estás seguro de que quieres eliminar este anime de tus favoritos?</string>
+    <string name="btn_accept">Aceptar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_logout">Cerrar Sesión</string>
 
     <string name="cd_volver">Volver a la pantalla anterior</string>
     <string name="cd_favorito">Toggle favorito</string>
     <string name="cd_enviar_email">Enviar Correo Electrónico</string>
 
-    <string name="email_to">soporte@anitalks.com</string>
-    <string name="email_subject">Consulta sobre AnimeTalks</string>
-    <string name="email_body">Hola, escribo para...</string>
-    <string name="chooser_title">Enviar correo usando...</string>
-    <string name="no_email_apps">No se encontraron aplicaciones de correo.</string>
-    <string name="nav_home">Animes</string>
-    <string name="nav_favorites">Favoritos</string>
-    <string name="nav_profile">Perfil</string>
-    <string name="nav_info">Acerca</string>
+    <string name="desc_snk">La humanidad vive protegida por muros de los Titanes.</string>
+    <string name="desc_jjk">Yuji Itadori se une a hechiceros tras comer un objeto maldito.</string>
+    <string name="desc_sxf">Un espía debe formar una familia falsa para la paz mundial.</string>
+    <string name="desc_op">Luffy busca el tesoro definitivo para ser el Rey Pirata.</string>
+
+    <string name="title_description">Descripción</string>
+    <string name="title_comments">Comentarios</string>
+    <string name="no_comments">No hay comentarios aún.</string>
+
+    <string name="profile_welcome">Bienvenido, Admin</string>
+    <string name="profile_not_logged">Sesión no iniciada</string>
+    <string name="about_version">AniTalks v1.0 - Práctica GUI</string>
+    <string name="btn_back">Volver</string>
+    <string name="no_favorites">Aún no tienes favoritos guardados</string>
+    <string name="no_results">No se han encontrado animes</string>
+
 </resources>
