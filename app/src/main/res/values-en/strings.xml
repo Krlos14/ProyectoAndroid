@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">AnimeTalks</string>
+    <string name="app_theme">Social Network for Anime Fans</string>
+    <string name="app_desc">AnimeTalks is the social network where you can chat about your favorite series, rate them, and follow other fans.</string>
+    <string name="app_version">Version 1.0.0</string>
+    <string name="cta_contacto_info">Contact Developer</string>
+
+    <string name="nav_home">Anime</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_info">About</string>
+
+    <string name="title_anime_list">Anime List</string>
+    <string name="search_placeholder">Search anime...</string>
+
+    <string name="dialog_delete_title">Remove Favorite</string>
+    <string name="dialog_delete_msg">Are you sure you want to remove this anime from your favorites?</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_logout">Logout</string>
+
+    <string name="cd_volver">Go back</string>
+    <string name="cd_favorito">Toggle favorite</string>
+    <string name="cd_enviar_email">Send Email</string>
+
+    <string name="desc_snk">Humanity lives protected by walls from giant Titans.</string>
+    <string name="desc_jjk">Yuji Itadori joins sorcerers after eating a cursed object.</string>
+    <string name="desc_sxf">A spy must form a fake family to maintain world peace.</string>
+    <string name="desc_op">Luffy seeks the ultimate treasure to be the Pirate King.</string>
+
+    <string name="title_description">Description</string>
+    <string name="title_comments">Comments</string>
+    <string name="no_comments">No comments yet.</string>
+
+    <string name="profile_welcome">Welcome, Admin</string>
+    <string name="profile_not_logged">Session not started</string>
+    <string name="about_version">AniTalks v1.0 - GUI Practice</string>
+    <string name="btn_back">Back</string>
+    <string name="no_favorites">You dont have any favorites yet</string>
+    <string name="no_results">No anime found</string>
+</resources>
