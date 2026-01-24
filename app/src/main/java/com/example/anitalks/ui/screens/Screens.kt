@@ -42,7 +42,9 @@ fun ElemListScreen(
                 OutlinedTextField(
                     value = searchQuery,
                     onValueChange = onSearchChange,
-                    modifier = Modifier.fillMaxWidth().padding(8.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
                     placeholder = { Text(stringResource(R.string.search_placeholder)) },
                     leadingIcon = { Icon(Icons.Default.Search, null) }
                 )
@@ -57,7 +59,9 @@ fun ElemListScreen(
             items(animeList) { anime ->
                 AnimeItemCard(
                     anime = anime,
-                    modifier = Modifier.padding(8.dp).clickable { onItemClick(anime) },
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .clickable { onItemClick(anime) },
                     onFavoriteClick = { onFavoriteClick(anime) }
                 )
             }
@@ -112,14 +116,13 @@ fun DetailItemScreen(
 
             Spacer(Modifier.height(16.dp))
 
-            // Título de descripción
+            //Descripcion
             Text(
                 text = stringResource(R.string.title_description),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
 
-            // Descripción traducida
             Text(
                 text = stringResource(anime.descriptionResId),
                 style = MaterialTheme.typography.bodyLarge
@@ -156,7 +159,7 @@ fun DetailItemScreen(
 @Composable
 fun ProfileScreen(isLoggedIn: Boolean, onLoginToggle: () -> Unit, modifier: Modifier = Modifier) {
     Column(modifier.fillMaxSize(), Arrangement.Center, Alignment.CenterHorizontally) {
-        // USAMOS RECURSOS AQUÍ
+
         Text(if (isLoggedIn) stringResource(R.string.profile_welcome) else stringResource(R.string.profile_not_logged))
         Spacer(Modifier.height(16.dp))
         Button(onClick = onLoginToggle) {

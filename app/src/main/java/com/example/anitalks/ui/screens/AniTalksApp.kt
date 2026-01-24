@@ -53,7 +53,7 @@ fun AniTalksApp(windowSize: WindowSize) {
     ) { p ->
         val mod = Modifier.padding(p)
         when {
-            // 1. PANTALLA DE LISTA PRINCIPAL
+            //Lista Animes
             currentRoute == "list" -> {
                 if (filtered.isEmpty()) {
                     Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -83,7 +83,7 @@ fun AniTalksApp(windowSize: WindowSize) {
                 }
             }
 
-            // 2. PANTALLA DE FAVORITOS
+
             currentRoute == "fav" -> {
                 val favorites = animeData.filter { it.isFavorite }
                 if (favorites.isEmpty()) {
@@ -104,7 +104,7 @@ fun AniTalksApp(windowSize: WindowSize) {
                 }
             }
 
-            // 3. PANTALLA DE DETALLE (¡Faltaba esto!)
+
             currentRoute.startsWith("detail/") -> {
                 val animeTitle = currentRoute.substringAfter("/")
                 val anime = animeData.find { it.title == animeTitle }
@@ -118,7 +118,7 @@ fun AniTalksApp(windowSize: WindowSize) {
                 }
             }
 
-            // 4. PANTALLA DE PERFIL (¡Faltaba esto!)
+            //Perfil
             currentRoute == "pro" -> {
                 ProfileScreen(
                     isLoggedIn = isLoggedIn,
@@ -127,7 +127,7 @@ fun AniTalksApp(windowSize: WindowSize) {
                 )
             }
 
-            // 5. PANTALLA ABOUT (¡Faltaba esto!)
+           //Sobre de
             currentRoute == "about" -> {
                 AboutScreen(
                     onBackClick = { currentRoute = "list" },

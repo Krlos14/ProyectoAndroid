@@ -4,6 +4,7 @@ import com.example.anitalks.R
 import com.example.anitalks.data.model.Anime
 import com.example.anitalks.data.model.Comment
 
+//Lista de animes
 val sampleAnimeList = listOf(
     Anime(1, "Shingeki no Kyojin", R.string.desc_snk, R.drawable.shingeki, 4.8f, true,
         listOf(Comment("ErenFan", "¡La temporada final es increíble!"))),
