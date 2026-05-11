@@ -24,7 +24,7 @@ private val DarkColorScheme = darkColorScheme(
     background = DarkBackground,
     onBackground = Color.White,
 
-    surface = DarkSurface, // Usado en tarjetas y fondos de componentes
+    surface = DarkSurface,
     onSurface = Color.White,
     surfaceVariant = Color(0xFF424242)
 )
@@ -47,9 +47,6 @@ private val LightColorScheme = lightColorScheme(
     surfaceVariant = Color(0xFFE0E0E0)
 )
 
-// ----------------------------------------------------------------------
-// 2. FUNCIÓN COMPOSABLE DEL TEMA
-// ----------------------------------------------------------------------
 
 @Composable
 fun AniTalksTheme(

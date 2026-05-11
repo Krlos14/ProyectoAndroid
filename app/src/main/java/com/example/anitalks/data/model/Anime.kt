@@ -5,7 +5,7 @@ data class Anime(
     val title: String,
     val imageUrl: String,
     val synopsis: String,
-    val score: Float, // Cambiar 'rating' por 'score' para que coincida con el Repositorio y la UI
+    val score: Float,
     val episodes: Int?,
     val status: String?,
     val year: Int?,

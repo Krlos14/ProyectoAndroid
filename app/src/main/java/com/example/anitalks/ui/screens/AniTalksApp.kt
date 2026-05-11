@@ -228,9 +228,9 @@ fun AniTalksApp(
 
                     val comments by detailViewModel.comments.collectAsState()
 
-                    // Dentro de AniTalksApp.kt, en la sección del bloque currentRoute == "detail"
+
                     val favorites by favoriteViewModel.favorites.collectAsState()
-                    val isFavorite = favorites.any { it.id == anime.id }// Comprueba si el ID está en favoritos
+                    val isFavorite = favorites.any { it.id == anime.id }
 
                     DetailItemScreen(
                         windowSize = windowSize,
