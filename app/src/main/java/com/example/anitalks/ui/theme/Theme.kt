@@ -53,14 +53,20 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun AniTalksTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    themeMode: String = "system",
     content: @Composable () -> Unit
 ) {
+    val darkTheme = when (themeMode) {
+        "light" -> false
+        "dark" -> true
+        else -> isSystemInDarkTheme()
+    }
+
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = AnimeTalksTypography, // <-- Tipografía personalizada
+        typography = AnimeTalksTypography,
         content = content
     )
 }

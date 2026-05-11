@@ -4,25 +4,35 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.anitalks.data.local.AnimeDatabase
+import com.example.anitalks.data.preferences.UserPreferencesDataStore
+import com.example.anitalks.data.repository.AnimeRepository
 import com.example.anitalks.ui.screens.AniTalksApp
 import com.example.anitalks.ui.theme.AniTalksTheme
 import com.example.anitalks.ui.util.rememberWindowSize
+import com.example.anitalks.ui.viewmodel.*
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         val splash: SplashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
 
-
         var keepOnScreen by mutableStateOf(true)
         splash.setKeepOnScreenCondition { keepOnScreen }
+
+        val database = AnimeDatabase.getDatabase(this)
+        val repository = AnimeRepository(database.animeDao())
+        val preferences = UserPreferencesDataStore(this)
 
         setContent {
 
@@ -31,18 +41,34 @@ class MainActivity : ComponentActivity() {
                 keepOnScreen = false
             }
 
-
             val windowSize = rememberWindowSize()
 
-            AniTalksTheme {
+            val profileViewModel: ProfileViewModel = viewModel(
+                factory = ProfileViewModelFactory(preferences)
+            )
+
+            val themeMode by profileViewModel.themeMode.collectAsState()
+
+            val animeListViewModel: AnimeListViewModel = viewModel(
+                factory = AnimeListViewModelFactory(repository)
+            )
+
+            val favoriteViewModel: FavoriteViewModel = viewModel(
+                factory = FavoriteViewModelFactory(repository)
+            )
+
+            AniTalksTheme(themeMode = themeMode) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // 3. Llamada al Contenedor Principal de la Aplicación (App Shell)
-                    // Este componente (AniTalksApp) contiene el Scaffold, la Barra de Navegación
-                    // Inferior y toda la lógica de cambio de pantalla (when/currentScreen).
-                    AniTalksApp(windowSize = windowSize)
+                    AniTalksApp(
+                        windowSize = windowSize,
+                        animeListViewModel = animeListViewModel,
+                        favoriteViewModel = favoriteViewModel,
+                        profileViewModel = profileViewModel,
+                        repository = repository
+                    )
                 }
             }
         }
