@@ -53,8 +53,10 @@ import com.example.anitalks.data.model.Anime
 import com.example.anitalks.ui.components.AnimeItemCard
 import com.example.anitalks.ui.util.WindowSize
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.CircularProgressIndicator
-
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ElemListScreen(
@@ -147,7 +149,8 @@ fun DetailItemScreen(
     anime: Anime,
     comments: List<CommentEntity>,
     username: String,
-    isFavorite: Boolean, // <--- Recibimos el estado de favorito
+    isFavorite: Boolean,
+    onFavoriteClick: () -> Unit,
     onAddComment: (String) -> Unit,
     onBackClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -235,13 +238,47 @@ fun DetailItemScreen(
                 modifier = Modifier.fillMaxWidth().height(280.dp).padding(bottom = 16.dp)
             )
 
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.Star, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                Text(
-                    text = "Puntuación: ${anime.score}/10",
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.padding(start = 6.dp)
-                )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Default.Star,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+
+                    Spacer(Modifier.width(4.dp))
+
+                    Text(
+                        "Rating: ${anime.score}/10",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                }
+
+                IconButton(
+                    onClick = onFavoriteClick
+                ) {
+                    Icon(
+                        imageVector = if (anime.isFavorite)
+                            Icons.Default.Favorite
+                        else
+                            Icons.Default.FavoriteBorder,
+
+                        contentDescription = null,
+
+                        tint =
+                            if (anime.isFavorite)
+                                MaterialTheme.colorScheme.primary
+                            else
+                                MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
             }
 
             Spacer(modifier = Modifier.height(12.dp))

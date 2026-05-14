@@ -237,13 +237,35 @@ fun AniTalksApp(
                         anime = anime,
                         comments = comments,
                         username = username,
-                        isFavorite = isFavorite, // Pasamos este nuevo parámetro
+
+                        isFavorite = isFavorite,
+
                         onAddComment = { text ->
-                            if (isFavorite) { // Doble comprobación de seguridad antes de insertar
-                                detailViewModel.addComment(animeId = anime.id, user = username, text = text)
+                            detailViewModel.addComment(
+                                animeId = anime.id,
+                                user = username,
+                                text = text
+                            )
+                        },
+
+                        onFavoriteClick = {
+
+                            if (favorites.any { it.id == anime.id }) {
+
+                                favorites.find { it.id == anime.id }?.let {
+                                    favoriteViewModel.deleteFavorite(it)
+                                }
+
+                            } else {
+
+                                animeListViewModel.saveFavorite(anime)
                             }
                         },
-                        onBackClick = { currentRoute = "list" },
+
+                        onBackClick = {
+                            currentRoute = "list"
+                        },
+
                         modifier = modifier
                     )
                 }
